@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="vertical"
+        android:background="@color/material_orange_50">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/header"
+        android:id="@+id/column1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray_light"
+        android:orientation="horizontal"
+        android:padding="1dp">
+
+        <RelativeLayout
+            android:id="@+id/container_expandable"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="7dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PRESIONAME"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+        android:id="@+id/expandableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/column1"
+        android:background="@color/material_light_blue_500"
+        app:ael_duration="150"
+        app:ael_interpolator="linear"
+        app:ael_orientation="vertical">
+
+        <TextView
+            android:id="@+id/one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/material_cyan_500"
+            android:padding="@dimen/margin_small"
+            android:text="CONTENIDO A MOSTRAR"
+            android:textColor="@color/material_red_300" />
+
+    </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+</RelativeLayout>
